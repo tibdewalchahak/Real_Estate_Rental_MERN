@@ -118,12 +118,13 @@ cd Real_Estate_Rental_MERN
 ### 2. Install Dependencies
 # Frontend
 ```bash
-cd "frontend src"
+cd client
 npm install
 ```
 # Backend
 ```bash
 cd ..
+cd api
 npm install
 ```
 
@@ -139,10 +140,12 @@ PORT=5000
 Open two terminals:
 ```bash
 # Terminal 1: Start backend
-npm start
+cd api
+node app.js
 
 # Terminal 2: Start frontend
-cd "frontend src"
+cd ..
+cd client
 npm start
 ```
 
