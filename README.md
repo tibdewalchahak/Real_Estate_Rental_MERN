@@ -30,7 +30,6 @@ A full-stack **MERN** application for managing rental properties, where users ca
 ---
 
 ## 📁 Folder Structure
-## 📁 Folder Structure
 
 ```bash
 ├── api                     # Backend (Node.js + Express + Prisma)
