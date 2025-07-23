@@ -30,17 +30,83 @@ A full-stack **MERN** application for managing rental properties, where users ca
 ---
 
 ## 📁 Folder Structure
-Real_Estate_Rental_MERN/
-├── frontend src/ # React frontend (consider renaming to frontend/)
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Pages like Login, Register, Home
-│ ├── App.js # React app routing
-│ └── index.js # Entry point
-├── models/ # Mongoose schemas (e.g., user.js)
-├── routes/ # API routes (user, property)
-├── server.js # Backend entry point
-├── .env # environment variables
-└── README.md # Project documentation
+## 📁 Folder Structure
+
+```bash
+├── api                     # Backend (Node.js + Express + Prisma)
+│   ├── controllers         # Logic for handling API requests
+│   │   ├── auth.controller.js
+│   │   ├── chat.controller.js
+│   │   ├── message.controller.js
+│   │   ├── post.controller.js
+│   │   ├── test.controller.js
+│   │   └── user.controller.js
+│   ├── lib                 # Custom utilities/libraries
+│   │   └── prisma.js       # Prisma client setup
+│   ├── middleware
+│   │   └── verifyToken.js  # JWT middleware
+│   ├── prisma
+│   │   └── schema.prisma   # Prisma DB schema
+│   ├── routes              # Route definitions
+│   │   ├── auth.route.js
+│   │   ├── chat.route.js
+│   │   ├── message.route.js
+│   │   ├── post.route.js
+│   │   ├── test.route.js
+│   │   └── user.route.js
+│   ├── app.js              # Main server file
+│   ├── package.json
+│   └── .gitignore
+
+├── client                  # Frontend (React)
+│   ├── public              # Static files
+│   ├── src
+│   │   ├── components      # Reusable UI components
+│   │   │   ├── About
+│   │   │   ├── card
+│   │   │   ├── chat
+│   │   │   ├── Contact
+│   │   │   ├── filter
+│   │   │   ├── hero
+│   │   │   ├── list
+│   │   │   ├── map
+│   │   │   ├── navbar
+│   │   │   ├── pin
+│   │   │   ├── searchBar
+│   │   │   ├── slider
+│   │   │   └── uploadWidget
+│   │   ├── context         # React context API logic
+│   │   │   ├── AuthContext.jsx
+│   │   │   ├── SocketContext.jsx
+│   │   ├── lib             # Utility functions
+│   │   │   ├── apiRequest.js
+│   │   │   ├── dummydata.js
+│   │   │   ├── loaders.js
+│   │   │   ├── notificationStore.js
+│   │   ├── routes         # Frontend routing
+│   │   │   ├── homePage
+│   │   │   ├── layout
+│   │   │   ├── listPage
+│   │   │   ├── login
+│   │   │   ├── newPostPage
+│   │   │   ├── profilePage
+│   │   │   ├── profileUpdate
+│   │   │   ├── register
+│   │   │   ├── singlePage
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   ├── index.js
+│   │   ├── index.css
+│   │   ├── reportWebVitals.js
+│   │   └── responsive.scss
+│   ├── package.json
+│   └── .gitignore
+
+├── socket                  # Socket.IO server
+│   ├── app.js              # WebSocket server logic
+│   ├── package.json
+│   └── .gitignore
+```
 
 ## 🚀 Getting Started
 
