@@ -18,7 +18,7 @@ const allowedOrigin = process.env.CLIENT_URL;
 console.log("DATABASE_URL =", process.env.DATABASE_URL);
 
 //now we set a linear pipeline
-app.use(cors({ origin: allowedOrigin, credentials: true })); // Enable CORS for requests from http://localhost:3000 with credentials
+app.use(cors({ origin: true, credentials: true })); // Enable CORS for requests from http://localhost:3000 with credentials
 app.use(express.json()); // Middleware to parse JSON request bodies
 app.use(cookieParser()); // Middleware to parse cookies from incoming requests
 
