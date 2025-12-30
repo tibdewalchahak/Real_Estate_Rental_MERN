@@ -17,7 +17,7 @@ function SinglePage() {
     if (!currentUser) {
       navigate("/login");
     }
-    // AFTER REACT 19 UPDATE TO USEOPTIMISTIK HOOK
+
     setSaved((prev) => !prev);
     try {
       await apiRequest.post("/users/save", { postId: post.id });
@@ -40,7 +40,7 @@ function SinglePage() {
                   <img src="/pin.png" alt="" />
                   <span>{post.address}</span>
                 </div>
-                <div className="price">$ {post.price}</div>
+                <div className="price">Rs. {post.price}</div>
               </div>
               <div className="user">
                 <img src={post.user.avatar} alt="" />
@@ -68,7 +68,7 @@ function SinglePage() {
                   <p>Owner is responsible</p>
                 ) : (
                   <p>Tenant is responsible</p>
-                )}
+                )} 
               </div>
             </div>
             <div className="feature">
@@ -146,7 +146,7 @@ function SinglePage() {
             <button
               onClick={handleSave}
               style={{
-                backgroundColor: saved ? "#fece51" : "white",
+                backgroundColor: saved ? "#63b6a6" : "white",
               }}
             >
               <img src="/save.png" alt="" />

@@ -1,22 +1,39 @@
 import { createContext, useEffect, useState } from "react";
+import apiRequest from "../lib/apiRequest";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(
-    JSON.parse(localStorage.getItem("user")) || null
-  );
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const updateUser = (data) => {
-    setCurrentUser(data);
+  // 🔑 SINGLE SOURCE OF TRUTH = BACKEND
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await apiRequest.get("/users/me");
+        setCurrentUser(res.data);
+      } catch (err) {
+        // token invalid / expired / belongs to another project
+        setCurrentUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  const updateUser = (user) => {
+    setCurrentUser(user);
   };
 
-  useEffect(() => {
-    localStorage.setItem("user", JSON.stringify(currentUser));
-  }, [currentUser]);
+  if (loading) {
+    return null; // or a loader
+  }
 
   return (
-    <AuthContext.Provider value={{ currentUser,updateUser }}>
+    <AuthContext.Provider value={{ currentUser, updateUser }}>
       {children}
     </AuthContext.Provider>
   );

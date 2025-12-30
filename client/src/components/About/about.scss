@@ -1,8 +1,8 @@
 /* about.scss */
 .about-container {
+  height: 100vh;
   padding: 60px 20px;
   text-align: center;
-  background-color: #f9f9f9;
 }
 
 .about-header {
@@ -28,19 +28,19 @@
     max-width: 800px;
     margin: 20px 0;
     padding: 20px;
-    background-color: #fff;
+    background-color: #63b6c6;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 
     h2 {
       font-size: 28px;
-      color: #333;
+      color: #000000;
       margin-bottom: 15px;
     }
 
     p {
       font-size: 16px;
-      color: #777;
+      color: #000000;
       line-height: 1.6;
     }
   }

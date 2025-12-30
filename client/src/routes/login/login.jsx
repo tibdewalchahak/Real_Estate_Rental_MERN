@@ -43,7 +43,7 @@ function Login() {
     <div className="login">
       <div className="formContainer">
         <form onSubmit={handleSubmit}>
-          <h1>Welcome back</h1>
+          <h1>Welcome back!</h1>
           <input
             name="username"
             required
@@ -64,7 +64,7 @@ function Login() {
         </form>
       </div>
       <div className="imgContainer">
-        <img src="/bg.png" alt="" />
+        <img src="../../../public/bg.jpg" alt="" />
       </div>
     </div>
   );

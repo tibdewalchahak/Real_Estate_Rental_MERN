@@ -4,13 +4,15 @@ import apiRequest from "./apiRequest";
 export const useNotificationStore = create((set) => ({
   number: 0,
   fetch: async () => {
-    const res = await apiRequest("/users/notification");
+  try {
+    const res = await apiRequest.get("/users/notification");
     set({ number: res.data });
-  },
-  decrease: () => {
-    set((prev) => ({ number: prev.number - 1 }));
-  },
-  reset: () => {
-    set({ number: 0 });
-  },
+  } catch (err) {
+    console.error("Notification fetch failed:", err.response?.data || err.message);
+    if (err.response?.status === 401) {
+      console.warn("Unauthorized — maybe token missing or expired?");
+    }
+  }
+},
+
 }));

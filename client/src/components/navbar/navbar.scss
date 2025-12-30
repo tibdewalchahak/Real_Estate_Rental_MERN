@@ -1,7 +1,9 @@
 @import "../../responsive.scss";
 
 nav {
-  height: 100px;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,7 +53,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: #fcf5f3;
     height: 100%;
 
     @include md {
@@ -59,11 +60,12 @@ nav {
     }
 
     a {
-      padding: 12px 24px;
-      margin: 20px;
+      padding: 6px 12px;
+      margin: 0px 12px;
     }
 
     .user{
+      border-radius: 6px;
       display: flex;
       align-items: center;
       font-weight: bold;
@@ -83,8 +85,9 @@ nav {
       }
 
       .profile{
-        padding: 12px 24px;
-        background-color: #fece51;
+        border-radius: 100px;
+        padding: 6px 12px;
+        background-color: #63b6c6;
         cursor: pointer;
         border: none;
         position: relative;
@@ -93,7 +96,7 @@ nav {
           position: absolute;
           top: -8px;
           right: -8px;
-          background-color: red;
+          background-color: #111827;
           color: white;
           border-radius: 50%;
           width: 26px;
@@ -107,7 +110,9 @@ nav {
     }
 
     .register {
-      background-color: #fece51;
+      text-align: center;
+      border-radius: 100px;
+      background-color: #63b6c6;
     }
 
     .menuIcon {

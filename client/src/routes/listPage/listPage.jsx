@@ -12,7 +12,7 @@ function ListPage() {
     <div className="listPage">
       <div className="listContainer">
         <div className="wrapper">
-          <Filter />
+          <Filter /> 
           <Suspense fallback={<p>Loading...</p>}>
             <Await
               resolve={data.postResponse}
