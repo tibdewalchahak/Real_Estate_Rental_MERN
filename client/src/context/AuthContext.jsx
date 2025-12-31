@@ -29,8 +29,13 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   if (loading) {
-    return null; // or a loader
-  }
+  return (
+    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <span>Loading...</span>
+    </div>
+  );
+}
+
 
   return (
     <AuthContext.Provider value={{ currentUser, updateUser }}>

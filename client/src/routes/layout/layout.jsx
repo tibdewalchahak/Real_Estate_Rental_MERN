@@ -13,15 +13,18 @@ function Layout() {
       <div className="content">
         <Outlet />
       </div>
-    </div> 
+    </div>
   );
 }
 
 function RequireAuth() {
   const { currentUser } = useContext(AuthContext);
 
-  if (!currentUser) return <Navigate to="/login" />;
-  else {
+  // if (loading) return null;
+
+  if (!currentUser) {
+    return <Navigate to="/login" replace />;
+  } else {
     return (
       <div className="layout">
         <div className="navbar">
