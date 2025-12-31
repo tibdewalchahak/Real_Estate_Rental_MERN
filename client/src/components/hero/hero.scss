@@ -1,10 +1,28 @@
+@import "../../responsive.scss";
+
 .hero {
   display: flex;
   flex-direction: column;
+  gap: 60px; // space between sections
 }
 
-.about.contact {
+/* About + Contact row */
+.infoRow {
   display: flex;
-  flex-direction: row;
-  gap: 40px;          /* spacing between About & Contact */
+  gap: 40px;
+  align-items: stretch;
+
+  @include md {
+    gap: 24px;
+  }
+
+  @include sm {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .about,
+  .contact {
+    flex: 1;
+  }
 }

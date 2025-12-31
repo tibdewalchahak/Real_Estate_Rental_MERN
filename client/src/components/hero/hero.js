@@ -9,9 +9,15 @@ const Hero = () => {
       <div className="home">
         <HomePage />
       </div>
-      <div className="about contact">
-        <About />
-        <Contact />
+
+      <div className="infoRow">
+        <div className="about">
+          <About />
+        </div>
+
+        <div className="contact">
+          <Contact />
+        </div>
       </div>
     </div>
   );

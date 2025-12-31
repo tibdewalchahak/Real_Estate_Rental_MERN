@@ -1,58 +1,56 @@
 @import "../../responsive.scss";
 
 .singlePage {
+  min-height: 100vh;
   display: flex;
-  height: 100%;
+  gap: 30px;
 
   @include md {
     flex-direction: column;
-    overflow: scroll;
   }
 
+  /* ================= DETAILS ================= */
   .details {
     flex: 3;
-    height: 100%;
-    overflow-y: scroll;
-
-    @include md {
-      flex: none;
-      height: max-content;
-      margin-bottom: 50px;
-    }
 
     .wrapper {
-      padding-right: 50px;
+      padding-right: 40px;
 
       @include lg {
         padding-right: 20px;
       }
+
       @include md {
-        padding-right: 0px;
+        padding-right: 0;
       }
 
       .info {
-        margin-top: 50px;
+        margin-top: 40px;
+
         .top {
           display: flex;
           justify-content: space-between;
+          gap: 30px;
 
           @include sm {
             flex-direction: column;
-            gap: 20px;
           }
 
           .post {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
+
             h1 {
               font-weight: 400;
+              font-size: 28px;
             }
+
             .address {
               display: flex;
-              gap: 5px;
+              gap: 6px;
               align-items: center;
-              color: #888;
+              color: #6b7280;
               font-size: 14px;
 
               img {
@@ -60,67 +58,67 @@
                 height: 16px;
               }
             }
+
             .price {
-              padding: 5px;
+              padding: 8px 14px;
               background-color: #a7dde6;
-              border-radius: 5px;
-              width: max-content;
+              border-radius: 8px;
+              width: fit-content;
               font-size: 20px;
-              font-weight: bolder;
+              font-weight: 700;
             }
           }
+
           .user {
+            min-width: 180px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 20px;
-            padding: 0px 50px;
-            border-radius: 10px;
+            gap: 14px;
+            padding: 20px;
+            border-radius: 12px;
             background-color: #a7dde6;
             font-weight: 600;
 
-            @include sm {
-              padding: 20px 50px;
-            }
-
             img {
-              width: 50px;
-              height: 50px;
+              width: 56px;
+              height: 56px;
               border-radius: 50%;
               object-fit: cover;
             }
+
+            @include sm {
+              align-self: flex-start;
+            }
           }
         }
+
         .bottom {
-          margin-top: 50px;
-          color: #555;
-          line-height: 20px;
+          margin-top: 40px;
+          color: #4b5563;
+          line-height: 1.6;
+          font-size: 15px;
         }
       }
     }
   }
+
+  /* ================= FEATURES ================= */
   .features {
     flex: 2;
     background-color: #cbeaf0e4;
-    height: 100%;
-    overflow-y: scroll;
+    border-radius: 16px;
+    padding: 20px;
 
     @include md {
-      flex: none;
-      height: max-content;
-      margin-bottom: 50px;
+      background-color: transparent;
+      padding: 0;
     }
 
     .wrapper {
-      padding: 0px 20px;
       display: flex;
       flex-direction: column;
       gap: 20px;
-
-      @include md {
-        padding: 20px;
-      }
 
       img {
         width: 24px;
@@ -128,52 +126,52 @@
       }
 
       .title {
-        font-weight: bold;
+        font-weight: 700;
         font-size: 18px;
-        margin-bottom: 10px;
       }
 
       .feature {
         display: flex;
         align-items: center;
-        gap: 10px;
-
-        img {
-          background-color: #cbeaf0e4;
-        }
+        gap: 12px;
 
         .featureText {
           span {
-            font-weight: bold;
+            font-weight: 600;
           }
           p {
             font-size: 14px;
+            color: #374151;
           }
         }
+      }
+
+      .listVertical,
+      .listHorizontal {
+        background-color: white;
+        border-radius: 12px;
+        padding: 16px;
       }
 
       .listVertical {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        padding: 20px 10px;
-        background-color: white;
-        border-radius: 10px;
+        gap: 16px;
       }
+
       .listHorizontal {
         display: flex;
         justify-content: space-between;
-        padding: 20px 10px;
-        background-color: white;
-        border-radius: 10px;
+        gap: 10px;
       }
 
       .sizes {
         display: flex;
         justify-content: space-between;
+        gap: 10px;
 
-        @include lg {
-          font-size: 12px;
+        @include sm {
+          flex-wrap: wrap;
         }
 
         .size {
@@ -182,33 +180,38 @@
           gap: 10px;
           background-color: white;
           padding: 10px;
-          border-radius: 5px;
+          border-radius: 8px;
+          font-size: 14px;
         }
       }
 
       .mapContainer {
         width: 100%;
-        height: 200px;
+        height: 220px;
+        border-radius: 12px;
+        overflow: hidden;
       }
 
       .buttons {
         display: flex;
         justify-content: space-between;
+        gap: 12px;
+
+        @include sm {
+          flex-direction: column;
+        }
 
         button {
-          padding: 20px;
+          flex: 1;
+          padding: 14px;
           display: flex;
           align-items: center;
-          gap: 5px;
+          justify-content: center;
+          gap: 6px;
           background-color: white;
           border: 1px solid #3a8fa3;
-          border-radius: 5px;
+          border-radius: 10px;
           cursor: pointer;
-
-          img {
-            width: 16px;
-            height: 16px;
-          }
         }
       }
     }

@@ -1,33 +1,66 @@
-.registerPage {
-  height: 100%;
-  display: flex;
+@import "../../responsive.scss";
 
+.registerPage {
+  min-height: 100vh;
+  display: flex;
+  background-color: #f9fafb;
+
+  @include md {
+    flex-direction: column;
+  }
+
+  /* ================= FORM ================= */
   .formContainer {
     flex: 1;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 40px 20px;
 
     form {
+      width: 100%;
+      max-width: 420px;
+      background-color: white;
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
+
+      @include sm {
+        padding: 30px 20px;
+      }
 
       input {
-        padding: 20px;
-        border: 1px solid gray;
-        border-radius: 5px;
+        padding: 14px 16px;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        font-size: 15px;
+        outline: none;
+
+        &:focus {
+          border-color: #3a8fa3;
+          box-shadow: 0 0 0 2px rgba(58, 143, 163, 0.25);
+        }
       }
 
       button {
-        padding: 20px;
-        border-radius: 5px;
+        margin-top: 6px;
+        padding: 14px;
+        border-radius: 10px;
         border: none;
         background-color: #3a8fa3;
         color: white;
-        font-weight: bold;
+        font-size: 15px;
+        font-weight: 600;
         cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover:not(:disabled) {
+          background-color: #327b8d;
+        }
 
         &:disabled {
           background-color: #bed9d8;
@@ -36,31 +69,35 @@
       }
 
       span {
-        color: rgba(255, 0, 0, 0.591);
+        font-size: 14px;
+        color: rgba(255, 0, 0, 0.75);
       }
 
       a {
         font-size: 14px;
-        color: gray;
-        border-bottom: 1px solid gray;
-        width: max-content;
+        color: #6b7280;
+        width: fit-content;
+        border-bottom: 1px solid #6b7280;
+
+        &:hover {
+          color: #3a8fa3;
+          border-color: #3a8fa3;
+        }
       }
     }
   }
 
+  /* ================= IMAGE ================= */
   .imgContainer {
     flex: 2;
     background-image: url("../../../public/login_bg.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: scroll;
     background-repeat: no-repeat;
     background-color: #fcf5f3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      width: 100%;
+
+    @include md {
+      display: none;
     }
   }
 }

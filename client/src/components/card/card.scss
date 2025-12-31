@@ -3,28 +3,43 @@
 .card {
   display: flex;
   gap: 20px;
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  @include sm {
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px;
+  }
 
   .imageContainer {
     flex: 2;
     height: 200px;
 
-    @include md {
-      display: none;
-    }
-
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 12px;
+    }
+
+    @include md {
+      height: 160px;
+    }
+
+    @include sm {
+      width: 100%;
+      height: 180px;
     }
   }
+
   .textContainer {
     flex: 3;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 12px;
 
     img {
       width: 16px;
@@ -34,12 +49,11 @@
     .title {
       font-size: 20px;
       font-weight: 600;
-      color: #444;
-      transition: all 0.4s ease;
+      color: #333;
+      line-height: 1.3;
 
-      &:hover {
-        color: #000;
-        scale: 1.01;
+      @include sm {
+        font-size: 18px;
       }
     }
 
@@ -47,54 +61,73 @@
       font-size: 14px;
       display: flex;
       align-items: center;
-      gap: 5px;
-      color: #888;
+      gap: 6px;
+      color: #777;
+
+      @include sm {
+        font-size: 13px;
+      }
     }
 
     .price {
-      font-size: 20px;
-      font-weight: 300;
-      padding: 5px;
-      border-radius: 5px;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 8px;
       background-color: #a7dde6;
-      width: max-content;
+      width: fit-content;
+
+      @include sm {
+        font-size: 16px;
+      }
     }
 
     .bottom {
       display: flex;
       justify-content: space-between;
-      gap: 10px;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+
+      @include sm {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
 
       .features {
         display: flex;
-        gap: 20px;
-        font-size: 14px;
+        gap: 10px;
+        font-size: 13px;
+        flex-wrap: wrap;
 
         .feature {
           display: flex;
           align-items: center;
-          gap: 5px;
-          background-color: whitesmoke;
-          padding: 5px;
-          border-radius: 5px;
+          gap: 6px;
+          background-color: #f2f2f2;
+          padding: 6px 10px;
+          border-radius: 8px;
         }
       }
 
       .icons {
         display: flex;
-        gap: 20px;
+        gap: 12px;
 
         .icon {
-          border: 1px solid #999;
-          padding: 2px 5px;
-          border-radius: 5px;
+          border: 1px solid #ccc;
+          padding: 6px;
+          border-radius: 8px;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
+          min-width: 36px;
+          min-height: 36px;
 
           &:hover {
-            background-color: lightgray;
+            background-color: #eee;
           }
         }
       }

@@ -1,8 +1,14 @@
-/* about.scss */
+@import "../../responsive.scss";
+
 .about-container {
-  height: 100vh;
+  min-height: 100vh; // safer than height
   padding: 60px 20px;
   text-align: center;
+
+  @include sm {
+    padding: 40px 16px;
+    text-align: left;
+  }
 }
 
 .about-header {
@@ -10,12 +16,24 @@
 
   h1 {
     font-size: 36px;
-    font-weight: bold;
+    font-weight: 700;
+    margin-bottom: 12px;
+
+    @include sm {
+      font-size: 26px;
+    }
   }
 
   p {
     font-size: 18px;
     color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+
+    @include sm {
+      font-size: 15px;
+      margin: 0;
+    }
   }
 }
 
@@ -24,24 +42,42 @@
   flex-direction: column;
   align-items: center;
 
+  @include sm {
+    align-items: stretch;
+  }
+
   .about-section {
     max-width: 800px;
+    width: 100%;
     margin: 20px 0;
-    padding: 20px;
+    padding: 24px;
     background-color: #63b6c6;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+
+    @include sm {
+      padding: 18px;
+    }
 
     h2 {
       font-size: 28px;
-      color: #000000;
-      margin-bottom: 15px;
+      color: #000;
+      margin-bottom: 12px;
+
+      @include sm {
+        font-size: 20px;
+      }
     }
 
     p {
       font-size: 16px;
-      color: #000000;
+      color: #000;
       line-height: 1.6;
+
+      @include sm {
+        font-size: 14px;
+        line-height: 1.5;
+      }
     }
   }
 }
